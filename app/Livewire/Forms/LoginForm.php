@@ -2,7 +2,8 @@
 
 namespace App\Livewire\Forms;
 
-use Livewire\Attributes\Validate;
+use Illuminate\Support\Facades\Auth;
+use Livewire\Attributes\Rule;
 use Livewire\Form;
 
 class LoginForm extends Form
@@ -17,11 +18,12 @@ class LoginForm extends Form
     {
         if (Auth::attempt($this->validate())) {
             session()->regenerate();
+
             return redirect()->intended(route('home'));
         }
 
         throw ValidationException::withMessages([
-            'email'=> 'The provided credentials do not match our records.',
+            'email' => 'The provided credentials do not match our records.',
         ]);
     }
 }
