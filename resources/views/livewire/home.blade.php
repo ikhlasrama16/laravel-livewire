@@ -1,3 +1,3 @@
 <div>
-    In work, do what you enjoy.
+    <h3>Home page</h3>
 </div>

@@ -11,10 +11,13 @@
     </head>
 
     <body>
-        <x-navigation-menu />
         <main class="py-5">
             <div class="container">
-                {{ $slot }}
+                <div class="row align-items-center vh-100 justify-content-center">
+                    <div class="col-md-4">
+                        {{ $slot }}
+                    </div>
+                </div>
             </div>
         </main>
         <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.7/dist/js/bootstrap.bundle.min.js"

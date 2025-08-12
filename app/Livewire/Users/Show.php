@@ -2,14 +2,14 @@
 
 namespace App\Livewire\Users;
 
-use Livewire\Attributes\Title;
+use App\Models\User;
 use Livewire\Component;
 
-#[Title('Users')]
 class Show extends Component
 {
+    public User $user;
     public function render()
     {
-        return view('livewire.users.show');
+        return view('livewire.users.show')->title($this->user->name);
     }
 }
