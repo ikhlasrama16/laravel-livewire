@@ -7,15 +7,14 @@
     <div class="collapse navbar-collapse" id="navbarSupportedContent">
         <ul class="navbar-nav mr-auto ">
             <x-nav-link :active="request()->routeIs('home')" href="/">Home</x-nav-link>
-            {{-- <x-nav-link :active="request()->routeIs('about')" href="{{ route('about') }}">About</x-nav-link>
-            <x-nav-link :active="request()->routeIs('contact')" href="{{ route('contact') }}">Contact</x-nav-link> --}}
-            <x-nav-link :active="request()->routeIs('posts.*')" href="{{ route('posts.index') }}">Post</x-nav-link>
+            <x-nav-link :active="request()->routeIs('timeline')" href="{{ route('timeline') }}">Timeline</x-nav-link>
+            <x-nav-link :active="request()->routeIs('users.index')" href="{{ route('users.index') }}">Users</x-nav-link>
         </ul>
         <ul class="navbar-nav ms-auto mb-2 mb-lg-0">
             @auth
                 <form class="mb-4" method="POST" action="{{ route('logout') }}">
                     @csrf
-                    <button type="submit" class="btn btn-danger">Logout</button>
+                    <button type="submit" class="nav-link">Logout</button>
                 </form>
             @else
                 <x-nav-link href="{{ route('login') }}">Login</x-nav-link>
